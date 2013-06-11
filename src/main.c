@@ -53,6 +53,17 @@ bool    main_arg_trans_key_pressed;
  */
 int main(void) {
 	kb_init();  // does controller initialization too
+    
+	// set internal pull-up off for both pins
+	PORTD &= ~(1<<4);
+	PORTD &= ~(1<<5);
+	PORTD &= ~(1<<6);
+    
+	// set the pins as output
+	// (because we cleared the applicable PORT bits above, the pins will now be driving low)
+	DDRD |= (1<<4);
+	DDRD |= (1<<5);
+	DDRD |= (1<<6);
 
 	kb_led_state_power_on();
 

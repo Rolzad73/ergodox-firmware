@@ -30,17 +30,29 @@
 	#define _kb_led_3_set(n)         (OCR1C = (uint8_t)(n))
 	#define _kb_led_3_set_percent(n) (OCR1C = (uint8_t)((n) * 0xFF))
 
+	#define _kb_led_4_on()           (PORTD |=  (1<<5))
+	#define _kb_led_4_off()          (PORTD &= ~(1<<5))
+	#define _kb_led_5_on()           (PORTD |=  (1<<4))
+	#define _kb_led_5_off()          (PORTD &= ~(1<<4))
+	#define _kb_led_6_on()           (PORTD |=  (1<<6))
+	#define _kb_led_6_off()          (PORTD &= ~(1<<6))
 
 	#define _kb_led_all_on() do {	\
 		_kb_led_1_on();		\
 		_kb_led_2_on();		\
 		_kb_led_3_on();		\
+		_kb_led_4_on();		\
+		_kb_led_5_on();		\
+		_kb_led_6_on();		\
 		} while(0)
 
 	#define _kb_led_all_off() do {	\
 		_kb_led_1_off();	\
 		_kb_led_2_off();	\
 		_kb_led_3_off();	\
+		_kb_led_4_off();	\
+		_kb_led_5_off();	\
+		_kb_led_6_off();	\
 		} while(0)
 
 	#define _kb_led_all_set(n) do {	\
