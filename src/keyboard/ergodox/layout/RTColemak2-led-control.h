@@ -27,17 +27,11 @@
 	#ifndef kb_led_delay_usb_init
 	#define kb_led_delay_usb_init() do {				\
 			_kb_led_1_set_percent(MAKEFILE_LED_BRIGHTNESS);	\
-			_delay_ms(200);					\
+			_delay_ms(333);					\
 			_kb_led_2_set_percent(MAKEFILE_LED_BRIGHTNESS);	\
-			_delay_ms(200);					\
+			_delay_ms(333);					\
 			_kb_led_3_set_percent(MAKEFILE_LED_BRIGHTNESS);	\
-			_delay_ms(200);					\
-			_kb_led_4_set_percent(MAKEFILE_LED_BRIGHTNESS);	\
-			_delay_ms(200);					\
-			_kb_led_5_set_percent(MAKEFILE_LED_BRIGHTNESS);	\
-			_delay_ms(200);					\
-			_kb_led_6_set_percent(MAKEFILE_LED_BRIGHTNESS);	\
-			_delay_ms(200);					\
+			_delay_ms(333);					\
 			} while(0)
 	#endif
 
