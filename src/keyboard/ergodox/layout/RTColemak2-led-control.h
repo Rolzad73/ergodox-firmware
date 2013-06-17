@@ -24,6 +24,7 @@
 	#endif
 
 	// note: need to delay for a total of ~1 second
+	// NOTE : change this to display the "moving snake" animation
 	#ifndef kb_led_delay_usb_init
 	#define kb_led_delay_usb_init() do {				\
 			_kb_led_1_set_percent(MAKEFILE_LED_BRIGHTNESS);	\

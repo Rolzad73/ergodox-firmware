@@ -54,16 +54,45 @@ bool    main_arg_trans_key_pressed;
 int main(void) {
 	kb_init();  // does controller initialization too
     
-	// // set internal pull-up off for both pins
+	///////////////////////////////////////////////////////////////////////////
+	// from kb_init()->teensy_init() (for reference)
+	// onboard LED
+	// (tied to GND for hardware convenience)
+	// DDRD  &= ~(1<<6);  // set D(6) as input
+	// PORTD &= ~(1<<6);  // set D(6) internal pull-up disabled
+
+	// // (tied to Vcc for hardware convenience)
+	// DDRB  &= ~(1<<4);  // set B(4) as input
+	// PORTB &= ~(1<<4);  // set B(4) internal pull-up disabled
+	///////////////////////////////////////////////////////////////////////////
+	
+	//from teensy-2.0.c file ( helpers )
+	// #define  SET    |=
+	// #define  CLEAR  &=~
+	
+	// more LED functionality (from someone's example) ////////////////////////
+	// set internal pull-up off for all pins
 	// PORTD &= ~(1<<4);
 	// PORTD &= ~(1<<5);
-	// PORTD &= ~(1<<6);
+	// PORTD &= ~(1<<6); this may be ground, as well, it is the onboard LED (so, probably dont touch)
     
-	// // set the pins as output
-	// // (because we cleared the applicable PORT bits above, the pins will now be driving low)
+	// set the pins as output
+	// (because we cleared the applicable PORT bits above, the pins will now be driving low)
 	// DDRD |= (1<<4);
 	// DDRD |= (1<<5);
-	// DDRD |= (1<<6);
+	// DDRD |= (1<<6);this may be ground, as well, it is the onboard LED (so, probably dont touch)
+	///////////////////////////////////////////////////////////////////////////
+	
+	// ports I think I can use as per circuit diagram (as well as use PB5, PB6, PB7 for existing LOCKS)
+	// PD4, PD5, PD7, PC7, PE6
+	
+	// LED ideas
+	// get a 7 segment display for wiring convenience and display awesomeness
+	// - when keyboard is plugged in, the 7 segment display could do a moving "snake" pattern
+	//   * lightup/lightdown in kb_led_delay_usb_init() in keyboard's C file
+	//  _
+	// |_| - top 4 LEDs show current layer in binary format clockwise from top 1,2,4,8 (16 layers)
+	// |_| - bottom 3 LEDs show capsLk, scrLk, numLk
 
 	kb_led_state_power_on();
 

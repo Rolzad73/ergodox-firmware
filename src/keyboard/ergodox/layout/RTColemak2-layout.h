@@ -14,6 +14,12 @@
 
 	// --------------------------------------------------------------------
 
+	// NOTE : change these depening on which LED # in the 7 Segment display they use
+	// NOTE : also add "current layer" display functions
+	//  _
+	// |_| - top 4 LEDs show current layer in binary format clockwise from top 1,2,4,8 (16 layers)
+	// |_| - bottom 3 LEDs show capsLk, scrLk, numLk
+	
 	#define kb_led_num_on()      _kb_led_1_on()
 	#define kb_led_num_off()     _kb_led_1_off()
 	#define kb_led_caps_on()     _kb_led_2_on()

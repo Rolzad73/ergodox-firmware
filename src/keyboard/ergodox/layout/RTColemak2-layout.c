@@ -61,45 +61,44 @@ void kbfun_layer_pop_all(void) {
 
 // LAYOUT ---------------------------------------------------------------------
 const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-// LAYER 0
-KB_MATRIX_LAYER( // main layer
+// LAYER 0 - main layer (Colemak)
+KB_MATRIX_LAYER(
     // unused
     0,
     // left hand
-    _esc,       _1,         _2,         _3,         _4,         _5,         1,
-    _grave,     _Q,         _W,         _F,         _P,         _G,         _bracketL,
-    _tab,       _A,         _R,         _S,         _T,         _D,
-    _shiftL,    _Z,         _X,         _C,         _V,         _B,         _dash,
-    _guiL,      _capsLock,  _print,     _scrollLock,_pause,
-                                                                _ctrlL,     _altL,
+    _grave,     _1,         _2,         _3,         _4,         _5,         1,
+    _tab,       _Q,         _W,         _F,         _P,         _G,         _bracketL,
+    _shiftL,    _A,         _R,         _S,         _T,         _D,
+    _ctrlL,     _Z,         _X,         _C,         _V,         _B,         _dash,
+    _altL,      _capsLock,  _print,     _scrollLock,_pause,
+                                                                _esc,       _guiL,
                                                     0,          0,          _home,
                                                     _bs,        _del,       _end,
     // right hand
-    1,          _6,         _7,         _8,         _9,         _0,         _insert,
-    _bracketR,  _J,         _L,         _U,         _Y,         _semicolon, _quote,
-                _H,         _N,         _E,         _I,         _O,         _backslash,
-    _equal,     _K,         _M,         _comma,     _period,    _slash,     _shiftR,
-                            _arrowL,    _arrowD,    _arrowU,    _arrowR,    _guiR, 
-    _altR,      _ctrlR,
+    2,          _6,         _7,         _8,         _9,         _0,         _quote,
+    _bracketR,  _J,         _L,         _U,         _Y,         _semicolon, _backslash,
+                _H,         _N,         _E,         _I,         _O,         _shiftR,
+    _equal,     _K,         _M,         _comma,     _period,    _slash,     _ctrlR,
+                            _arrowL,    _arrowD,    _arrowU,    _arrowR,    _altR, 
+    _guiR,      _insert,
     _pageU,     0,          0,
     _pageD,     _enter,     _space
 ),
-// LAYER 1
-KB_MATRIX_LAYER( // function keys, and bootloader
+// LAYER 1 - function keys, and bootloader
+KB_MATRIX_LAYER(
     // unused
     0,
     // left hand
-    _F1,        _F2,        _F3,        _F4,        _F5,        _F6,        1,
+    _F1,        _F2,        _F3,        _F4,        _F5,        _F6,        0,
     0,          0,          0,          0,          0,          0,          0,
     0,          0,          0,          0,          0,          0,
-    0,          0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,          0,          1,
     0,          0,          0,          0,          0,
                                                                 0,          0,
                                                     0,          0,          0,
                                                     0,          0,          0,
     // right hand
-    // was 4 for +4
-    1,          _F7,        _F8,        _F9,        _F10,       _F11,       _F12,
+    0,          _F7,        _F8,        _F9,        _F10,       _F11,       _F12,
     0,          0,          0,          0,          0,          0,          0,
                 0,          0,          0,          0,          0,          0,
     0,          0,          0,          0,          0,          0,          0,
@@ -108,12 +107,35 @@ KB_MATRIX_LAYER( // function keys, and bootloader
     0,          0,          0,
     0,          0,          0
 ),
+// LAYER 2 - backup layer (QWERTY)
+KB_MATRIX_LAYER(
+    // unused
+    0,
+    // left hand
+    _grave,     _1,         _2,         _3,         _4,         _5,         1,
+    _tab,       _Q,         _W,         _E,         _R,         _T,         _bracketL,
+    _shiftL,    _A,         _S,         _D,         _F,         _G,
+    _ctrlL,     _Z,         _X,         _C,         _V,         _B,         _dash,
+    _altL,      _capsLock,  _print,     _scrollLock,_pause,
+                                                                _esc,       _guiL,
+                                                    0,          0,          _home,
+                                                    _bs,        _del,       _end,
+    // right hand
+    2,          _6,         _7,         _8,         _9,         _0,         _quote,
+    _bracketR,  _Y,         _U,         _I,         _O,         _P,         _backslash,
+                _H,         _J,         _K,         _L,         _semicolon, _shiftR,
+    _equal,     _N,         _M,         _comma,     _period,    _slash,     _ctrlR,
+                            _arrowL,    _arrowD,    _arrowU,    _arrowR,    _altR, 
+    _guiR,      _insert,
+    _pageU,     0,          0,
+    _pageD,     _enter,     _space
+),
 };
 // ----------------------------------------------------------------------------
 
 // PRESS ----------------------------------------------------------------------
 const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-// LAYER 0
+// LAYER 0 - main layer (Colemak)
 KB_MATRIX_LAYER(
     // unused
     NULL,
@@ -127,7 +149,7 @@ KB_MATRIX_LAYER(
                                                     NULL,       NULL,       kprrel,
                                                     kprrel,     kprrel,     kprrel,
     // right hand
-    lpush1,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    lpush2,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
                 kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
@@ -136,35 +158,58 @@ KB_MATRIX_LAYER(
     kprrel,     NULL,       NULL,
     kprrel,     kprrel,     kprrel
 ),
-// LAYER 1
+// LAYER 1 - function keys, and bootloader
 KB_MATRIX_LAYER(
     // unused
     NULL,
     // left hand
-    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpop1,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       dbtldr,
-    NULL,       NULL,       NULL,       NULL,       NULL,
-                                                                NULL,       NULL,
-                                                    NULL,       NULL,       NULL,
-                                                    NULL,       NULL,       NULL,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     lpop1,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                                                                ktrans,     dbtldr,
+                                                    ktrans,     ktrans,     ktrans,
+                                                    ktrans,     ktrans,     ktrans,
     // right hand
-    lpop1,      kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-                NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    dbtldr,     NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-                            NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,
-    NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL
+    NULL,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    NULL,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    lpop,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                            ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    dbtldr,     ktrans,
+    ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans
+),
+// LAYER 2 - backup layer (QWERTY)
+KB_MATRIX_LAYER(
+    // unused
+    NULL,
+    // left hand
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpush1,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+                                                                kprrel,     kprrel,
+                                                    NULL,       NULL,       kprrel,
+                                                    kprrel,     kprrel,     kprrel,
+    // right hand
+    lpop2,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+                kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+                            kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,
+    kprrel,     NULL,       NULL,
+    kprrel,     kprrel,     kprrel
 ),
 };
 // ----------------------------------------------------------------------------
 
 // RELEASE --------------------------------------------------------------------
 const void_funptr_t PROGMEM _kb_layout_release[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-// LAYER 0
+// LAYER 0 - main layer (Colemak)
 KB_MATRIX_LAYER(
     // unused
     NULL,
@@ -187,28 +232,51 @@ KB_MATRIX_LAYER(
     kprrel,     NULL,       NULL,
     kprrel,     kprrel,     kprrel
 ),
-// LAYER 1
+// LAYER 1 - function keys, and bootloader
     KB_MATRIX_LAYER(
     // unused
     NULL,	
     // left hand
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,
-                                                                NULL,       NULL,
-                                                    NULL,       NULL,       NULL,
-                                                    NULL,       NULL,       NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                                                                ktrans,     NULL,
+                                                    ktrans,     ktrans,     ktrans,
+                                                    ktrans,     ktrans,     ktrans,
     // right hand
-    NULL,      kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-                NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
-                            NULL,       NULL,       NULL,       NULL,       NULL,
-    NULL,       NULL,
-    NULL,       NULL,       NULL,
-    NULL,       NULL,       NULL
+    NULL,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    NULL,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    NULL,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                            ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    NULL,       ktrans,
+    ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans
+),
+// LAYER 2 - backup layer (QWERTY)
+KB_MATRIX_LAYER(
+    // unused
+    NULL,
+    // left hand
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+                                                                kprrel,     kprrel,
+                                                    NULL,       NULL,       kprrel,
+                                                    kprrel,     kprrel,     kprrel,
+    // right hand
+    NULL,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+                kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+                            kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    kprrel,     kprrel,
+    kprrel,     NULL,       NULL,
+    kprrel,     kprrel,     kprrel
 ),
 };
 // ----------------------------------------------------------------------------
