@@ -89,10 +89,10 @@ KB_MATRIX_LAYER(
     // unused
     0,
     // left hand
-    _F1,        _F2,        _F3,        _F4,        _F5,        _F6,        0,
+    _F1,        _F2,        _F3,        _F4,        _F5,        _F6,        1,
     0,          0,          0,          0,          0,          0,          0,
     0,          0,          0,          0,          0,          0,
-    0,          0,          0,          0,          0,          0,          1,
+    0,          0,          0,          0,          0,          0,          0,
     0,          0,          0,          0,          0,
                                                                 0,          0,
                                                     0,          0,          0,
@@ -121,7 +121,7 @@ KB_MATRIX_LAYER(
                                                     0,          0,          _home,
                                                     _bs,        _del,       _end,
     // right hand
-    2,          _6,         _7,         _8,         _9,         _0,         _quote,
+    0,          _6,         _7,         _8,         _9,         _0,         _quote,
     _bracketR,  _Y,         _U,         _I,         _O,         _P,         _backslash,
                 _H,         _J,         _K,         _L,         _semicolon, _shiftR,
     _equal,     _N,         _M,         _comma,     _period,    _slash,     _ctrlR,
@@ -163,22 +163,22 @@ KB_MATRIX_LAYER(
     // unused
     NULL,
     // left hand
-    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
-    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     NULL,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpop1,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     lpop1,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                                                                 ktrans,     dbtldr,
-                                                    ktrans,     ktrans,     ktrans,
+                                                    NULL,       NULL,       ktrans,
                                                     ktrans,     ktrans,     ktrans,
     // right hand
-    NULL,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
-    NULL,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    lpop,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                 ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-    lpop,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                             ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     dbtldr,     ktrans,
-    ktrans,     ktrans,     ktrans,
+    ktrans,     NULL,       NULL,
     ktrans,     ktrans,     ktrans
 ),
 // LAYER 2 - backup layer (QWERTY)
@@ -195,7 +195,7 @@ KB_MATRIX_LAYER(
                                                     NULL,       NULL,       kprrel,
                                                     kprrel,     kprrel,     kprrel,
     // right hand
-    lpop2,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    lpop,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
                 kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
@@ -238,21 +238,21 @@ KB_MATRIX_LAYER(
     NULL,	
     // left hand
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
-    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                                                                 ktrans,     NULL,
-                                                    ktrans,     ktrans,     ktrans,
+                                                    NULL,       NULL,       ktrans,
                                                     ktrans,     ktrans,     ktrans,
     // right hand
     NULL,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
-    NULL,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                 ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-    NULL,       ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                             ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     NULL,       ktrans,
-    ktrans,     ktrans,     ktrans,
+    ktrans,     NULL,       NULL,
     ktrans,     ktrans,     ktrans
 ),
 // LAYER 2 - backup layer (QWERTY)

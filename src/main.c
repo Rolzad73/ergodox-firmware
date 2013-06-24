@@ -93,6 +93,13 @@ int main(void) {
 	//  _
 	// |_| - top 4 LEDs show current layer in binary format clockwise from top 1,2,4,8 (16 layers)
 	// |_| - bottom 3 LEDs show capsLk, scrLk, numLk
+	//
+	// update: the display i got has a decimal point as well, so that makes 8 LEDs I could use,
+	// and 8 ports open.  will have to find a use for the decimal.
+	//
+	// NOTE : some ports are digital while others are analog.  In the cuircuit diagram SVG, the
+	//        LEDs have an indicator on the PWM (pulse width modultion) which is how the code gets
+	//        different brightnesses. see teensy-2-0.md for detailed info
 
 	kb_led_state_power_on();
 
