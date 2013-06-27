@@ -97,9 +97,12 @@ int main(void) {
 	// update: the display i got has a decimal point as well, so that makes 8 LEDs I could use,
 	// and 8 ports open.  will have to find a use for the decimal.
 	//
-	// NOTE : some ports are digital while others are analog.  In the cuircuit diagram SVG, the
+	// NOTE : some ports are digital while others are analog.  In the circuit diagram SVG, the
 	//        LEDs have an indicator on the PWM (pulse width modultion) which is how the code gets
 	//        different brightnesses. see teensy-2-0.md for detailed info
+    //
+    // NOTE : Look into using SoftPWM library to get digital pins to be able to set brigtness
+    //        of LEDs that are not on OCR pins
 
 	kb_led_state_power_on();
 
