@@ -34,27 +34,31 @@
 	// TODO : get the correct ports to use
 	// ports I think I can use as per circuit diagram (as well as use PB5, PB6, PB7 for existing LOCKS)
 	// PD4, PD5, PD7, PC7, PE6
-	// NOTE : do not use - > PB4 is +v and PD6 is ground
+	// NOTE : do not use -> PB4 is +v and PD6 is ground
 	// NOTE : will want to figure out "set_percent(n)" for theses as well
-	// #define _kb_led_4_on()           (PORTD |=  (1<<4))
-	// #define _kb_led_4_off()          (PORTD &= ~(1<<4))
-	// #define _kb_led_5_on()           (PORTD |=  (1<<5))
-	// #define _kb_led_5_off()          (PORTD &= ~(1<<6))
-	// #define _kb_led_6_on()           (PORTD |=  (1<<7))
-	// #define _kb_led_6_off()          (PORTD &= ~(1<<7))
-	// #define _kb_led_7_on()           (PORTC |=  (1<<7))
-	// #define _kb_led_7_off()          (PORTC &= ~(1<<7))
+	 #define _kb_led_4_on()           (PORTD |=  (1<<4))
+	 #define _kb_led_4_off()          (PORTD &= ~(1<<4))
+	 #define _kb_led_5_on()           (PORTD |=  (1<<5))
+	 #define _kb_led_5_off()          (PORTD &= ~(1<<5))
+	 #define _kb_led_6_on()           (PORTE |=  (1<<6))
+	 #define _kb_led_6_off()          (PORTE &= ~(1<<6))
 
 	#define _kb_led_all_on() do {	\
 		_kb_led_1_on();		\
 		_kb_led_2_on();		\
 		_kb_led_3_on();		\
+		_kb_led_4_on();		\
+		_kb_led_5_on();		\
+		_kb_led_6_on();		\
 		} while(0)
 
 	#define _kb_led_all_off() do {	\
 		_kb_led_1_off();	\
 		_kb_led_2_off();	\
 		_kb_led_3_off();	\
+		_kb_led_4_off();	\
+		_kb_led_5_off();	\
+		_kb_led_6_off();	\
 		} while(0)
 
 	#define _kb_led_all_set(n) do {	\

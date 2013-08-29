@@ -181,6 +181,9 @@ int main(void) {
 		else { kb_led_compose_off(); }
 		if (keyboard_leds & (1<<4)) { kb_led_kana_on(); }
 		else { kb_led_kana_off(); }
+
+		// set layer indicator LEDS
+		indicate_active_layer();
 	}
 
 	return 0;
@@ -217,8 +220,8 @@ struct layers {
 
 // ----------------------------------------------------------------------------
 
-struct layers layers[MAX_ACTIVE_LAYERS];
 uint8_t       layers_head = 0;
+struct layers layers[MAX_ACTIVE_LAYERS];
 uint8_t       layers_ids_in_use[MAX_ACTIVE_LAYERS] = {true};
 
 /*
@@ -339,6 +342,18 @@ uint8_t main_layers_get_offset_id(uint8_t id) {
 
 }
 
+/*
+ * indicate_active_layer()
+ * - indicates active layer in binary notation
+ */
+void indicate_active_layer() {
+	if (layers[layers_head].layer & (1<<0)) { _kb_led_6_on(); }
+	else { _kb_led_6_off();	}
+	if (layers[layers_head].layer & (1<<1)) { _kb_led_5_on(); }
+	else { _kb_led_5_off();	}
+	if (layers[layers_head].layer & (1<<2)) { _kb_led_4_on(); }
+	else { _kb_led_4_off();	}
+}
 /* ----------------------------------------------------------------------------
  * ------------------------------------------------------------------------- */
 

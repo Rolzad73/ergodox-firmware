@@ -55,9 +55,6 @@
 // --- unused
 #define  UNUSED_0  C, 7
 #define  UNUSED_1  D, 7
-#define  UNUSED_2  D, 4  // hard to use with breadboard (on the end)
-#define  UNUSED_3  D, 5  // hard to use with breadboard (on the end)
-#define  UNUSED_4  E, 6  // hard to use with breadboard (internal)
 
 // --- rows
 #define  ROW_0  F, 7
@@ -96,10 +93,7 @@
 #define  teensypin_write_all_unused(register, operation)		\
 	do {								\
 		teensypin_write(register, operation, UNUSED_0);		\
-		teensypin_write(register, operation, UNUSED_1);		\
-		teensypin_write(register, operation, UNUSED_2);		\
-		teensypin_write(register, operation, UNUSED_3);		\
-		teensypin_write(register, operation, UNUSED_4); }	\
+		teensypin_write(register, operation, UNUSED_1); }	\
 	while(0)
 
 #define  teensypin_write_all_row(register, operation)		\
@@ -190,6 +184,18 @@ uint8_t teensy_init(void) {
 	// unused pins
 	teensypin_write_all_unused(DDR, CLEAR); // set as input
 	teensypin_write_all_unused(PORT, SET);  // set internal pull-up enabled
+
+	// rpw - set the pins I want to use as output
+	// set pins as output for extra LED functionality
+	// D(4), D(5) and E(6)
+	// set as "off"
+	PORTD &= ~(1<<4);
+	PORTD &= ~(1<<5);
+	PORTE &= ~(1<<6);
+	// set as output
+	DDRD |=  (1<<4);
+	DDRD |=  (1<<5);
+	DDRE |=  (1<<6);
 
 	// rows and columns
 	teensypin_write_all_row(DDR, CLEAR);     // set as input (hi-Z)

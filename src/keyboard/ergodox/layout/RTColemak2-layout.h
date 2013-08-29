@@ -14,7 +14,7 @@
 
 	// --------------------------------------------------------------------
 
-	// NOTE : change these depening on which LED # in the 7 Segment display they use
+	// NOTE : change these depending on which LED # in the 7 Segment display they use
 	// NOTE : also add "current layer" display functions
 	//  _
 	// |_| - top 4 LEDs show current layer in binary format clockwise from top 1,2,4,8 (16 layers)

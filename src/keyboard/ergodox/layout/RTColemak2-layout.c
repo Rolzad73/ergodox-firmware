@@ -66,7 +66,7 @@ KB_MATRIX_LAYER(
     // unused
     0,
     // left hand
-    _grave,     _1,         _2,         _3,         _4,         _5,         1,
+    _grave,     _1,         _2,         _3,         _4,         _5,         2,
     _tab,       _Q,         _W,         _F,         _P,         _G,         _bracketL,
     _shiftL,    _A,         _R,         _S,         _T,         _D,
     _ctrlL,     _Z,         _X,         _C,         _V,         _B,         _dash,
@@ -75,7 +75,7 @@ KB_MATRIX_LAYER(
                                                     0,          0,          _home,
                                                     _bs,        _del,       _end,
     // right hand
-    2,          _6,         _7,         _8,         _9,         _0,         _quote,
+    1,          _6,         _7,         _8,         _9,         _0,         _quote,
     _bracketR,  _J,         _L,         _U,         _Y,         _semicolon, _backslash,
                 _H,         _N,         _E,         _I,         _O,         _shiftR,
     _equal,     _K,         _M,         _comma,     _period,    _slash,     _ctrlR,
@@ -84,12 +84,84 @@ KB_MATRIX_LAYER(
     _pageU,     0,          0,
     _pageD,     _enter,     _space
 ),
-// LAYER 1 - function keys, and bootloader
+// LAYER 1 - Fn keys overlay for LAYER 0
 KB_MATRIX_LAYER(
     // unused
     0,
     // left hand
     _F1,        _F2,        _F3,        _F4,        _F5,        _F6,        1,
+    0,          0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,
+                                                                0,          0,
+                                                    0,          0,          0,
+                                                    0,          0,          0,
+    // right hand
+    2,          _F7,        _F8,        _F9,        _F10,       _F11,       _F12,
+    0,          0,          0,          0,          0,          0,          0,
+                0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,          0,          0,
+                            0,          0,          0,          0,          0,
+    0,          0,
+    0,          0,          0,
+    0,          0,          0
+),
+
+/////////////////////////
+// LAYER 2 - Numpad and misc controls
+KB_MATRIX_LAYER(
+    // unused
+    0,
+    // left hand
+    0,          0,          0,          0,          0,          0,          2,
+    0,          0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,          0,          0,
+    0,          0,          0,          0,          0,
+                                                                0,          0,
+                                                    0,          0,          0,
+                                                    0,          0,          0,
+    // right hand
+    3,          0,          _numLock_kp,_div_kp,    _mul_kp,    _sub_kp,    0,
+    0,          0,          _7_kp,      _8_kp,      _9_kp,      _add_kp,    0,
+                0,          _4_kp,      _5_kp,      _6_kp,      _add_kp,    0,
+    0,          0,          _1_kp,      _2_kp,      _3_kp,      _enter_kp,  0,
+                            _0_kp,      _0_kp,      _dec_del_kp,_enter_kp,  0,
+    0,          0,
+    0,          0,          0,
+    0,          0,          0
+),
+// LAYER 3 - backup layer (QWERTY)
+KB_MATRIX_LAYER(
+    // unused
+    0,
+    // left hand
+    _grave,     _1,         _2,         _3,         _4,         _5,         3,
+    _tab,       _Q,         _W,         _E,         _R,         _T,         _bracketL,
+    _shiftL,    _A,         _S,         _D,         _F,         _G,
+    _ctrlL,     _Z,         _X,         _C,         _V,         _B,         _dash,
+    _altL,      _capsLock,  _print,     _scrollLock,_pause,
+                                                                _esc,       _guiL,
+                                                    0,          0,          _home,
+                                                    _bs,        _del,       _end,
+    // right hand
+    4,          _6,         _7,         _8,         _9,         _0,         _quote,
+    _bracketR,  _Y,         _U,         _I,         _O,         _P,         _backslash,
+                _H,         _J,         _K,         _L,         _semicolon, _shiftR,
+    _equal,     _N,         _M,         _comma,     _period,    _slash,     _ctrlR,
+                            _arrowL,    _arrowD,    _arrowU,    _arrowR,    _altR, 
+    _guiR,      _insert,
+    _pageU,     0,          0,
+    _pageD,     _enter,     _space
+),
+
+// LAYER 4 - Fn keys overlay for LAYER 3
+KB_MATRIX_LAYER(
+    // unused
+    0,
+    // left hand
+    _F1,        _F2,        _F3,        _F4,        _F5,        _F6,        4,
     0,          0,          0,          0,          0,          0,          0,
     0,          0,          0,          0,          0,          0,
     0,          0,          0,          0,          0,          0,          0,
@@ -107,29 +179,6 @@ KB_MATRIX_LAYER(
     0,          0,          0,
     0,          0,          0
 ),
-// LAYER 2 - backup layer (QWERTY)
-KB_MATRIX_LAYER(
-    // unused
-    0,
-    // left hand
-    _grave,     _1,         _2,         _3,         _4,         _5,         1,
-    _tab,       _Q,         _W,         _E,         _R,         _T,         _bracketL,
-    _shiftL,    _A,         _S,         _D,         _F,         _G,
-    _ctrlL,     _Z,         _X,         _C,         _V,         _B,         _dash,
-    _altL,      _capsLock,  _print,     _scrollLock,_pause,
-                                                                _esc,       _guiL,
-                                                    0,          0,          _home,
-                                                    _bs,        _del,       _end,
-    // right hand
-    0,          _6,         _7,         _8,         _9,         _0,         _quote,
-    _bracketR,  _Y,         _U,         _I,         _O,         _P,         _backslash,
-                _H,         _J,         _K,         _L,         _semicolon, _shiftR,
-    _equal,     _N,         _M,         _comma,     _period,    _slash,     _ctrlR,
-                            _arrowL,    _arrowD,    _arrowU,    _arrowR,    _altR, 
-    _guiR,      _insert,
-    _pageU,     0,          0,
-    _pageD,     _enter,     _space
-),
 };
 // ----------------------------------------------------------------------------
 
@@ -140,7 +189,7 @@ KB_MATRIX_LAYER(
     // unused
     NULL,
     // left hand
-    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpush1,
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpush2,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
@@ -149,7 +198,7 @@ KB_MATRIX_LAYER(
                                                     NULL,       NULL,       kprrel,
                                                     kprrel,     kprrel,     kprrel,
     // right hand
-    lpush2,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    lpush1,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
                 kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
@@ -158,7 +207,7 @@ KB_MATRIX_LAYER(
     kprrel,     NULL,       NULL,
     kprrel,     kprrel,     kprrel
 ),
-// LAYER 1 - function keys, and bootloader
+// LAYER 1 - Fn keys overlay for LAYER 0
 KB_MATRIX_LAYER(
     // unused
     NULL,
@@ -168,25 +217,48 @@ KB_MATRIX_LAYER(
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-                                                                ktrans,     dbtldr,
+                                                                ktrans,     ktrans,
                                                     NULL,       NULL,       ktrans,
                                                     ktrans,     ktrans,     ktrans,
     // right hand
-    lpop,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    lpush2,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                 ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                             ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-    dbtldr,     ktrans,
+    ktrans,     ktrans,
     ktrans,     NULL,       NULL,
     ktrans,     ktrans,     ktrans
 ),
-// LAYER 2 - backup layer (QWERTY)
+// LAYER 2 - Numpad and misc controls
 KB_MATRIX_LAYER(
     // unused
     NULL,
     // left hand
-    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpush1,
+    dbtldr,     NULL,       NULL,       NULL,       NULL,       NULL,       lpop2,
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,
+                                                                NULL,       NULL,
+                                                    NULL,       NULL,       NULL,
+                                                    NULL,       NULL,       NULL,
+    // right hand
+    lpush3,     NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    NULL,       NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+                NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    NULL,       NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+                            kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    NULL,       NULL,
+    NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL
+),
+// LAYER 3 - backup layer (QWERTY)
+KB_MATRIX_LAYER(
+    // unused
+    NULL,
+    // left hand
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpop3,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
@@ -195,7 +267,7 @@ KB_MATRIX_LAYER(
                                                     NULL,       NULL,       kprrel,
                                                     kprrel,     kprrel,     kprrel,
     // right hand
-    lpop,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    lpush4,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
                 kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
@@ -203,6 +275,29 @@ KB_MATRIX_LAYER(
     kprrel,     kprrel,
     kprrel,     NULL,       NULL,
     kprrel,     kprrel,     kprrel
+),
+// LAYER 4 - Fn keys overlay for LAYER 3
+KB_MATRIX_LAYER(
+    // unused
+    NULL,
+    // left hand
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     lpop4,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                                                                ktrans,     ktrans,
+                                                    NULL,       NULL,       ktrans,
+                                                    ktrans,     ktrans,     ktrans,
+    // right hand
+    lpop,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                            ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,
+    ktrans,     NULL,       NULL,
+    ktrans,     ktrans,     ktrans
 ),
 };
 // ----------------------------------------------------------------------------
@@ -232,17 +327,17 @@ KB_MATRIX_LAYER(
     kprrel,     NULL,       NULL,
     kprrel,     kprrel,     kprrel
 ),
-// LAYER 1 - function keys, and bootloader
+// LAYER 1 - Fn keys overlay for LAYER 0
     KB_MATRIX_LAYER(
     // unused
-    NULL,	
+    NULL,
     // left hand
     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-                                                                ktrans,     NULL,
+                                                                ktrans,     ktrans,
                                                     NULL,       NULL,       ktrans,
                                                     ktrans,     ktrans,     ktrans,
     // right hand
@@ -251,11 +346,34 @@ KB_MATRIX_LAYER(
                 ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
                             ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
-    NULL,       ktrans,
+    ktrans,     ktrans,
     ktrans,     NULL,       NULL,
     ktrans,     ktrans,     ktrans
 ),
-// LAYER 2 - backup layer (QWERTY)
+// LAYER 2 - Numpad and misc controls
+    KB_MATRIX_LAYER(
+    // unused
+    NULL,
+    // left hand
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL,       NULL,       NULL,
+                                                                NULL,       NULL,
+                                                    NULL,       NULL,       NULL,
+                                                    NULL,       NULL,       NULL,
+    // right hand
+    NULL,       NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    NULL,       NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+                NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    NULL,       NULL,       kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+                            kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    NULL,       NULL,
+    NULL,       NULL,       NULL,
+    NULL,       NULL,       NULL
+),
+// LAYER 3 - backup layer (QWERTY)
 KB_MATRIX_LAYER(
     // unused
     NULL,
@@ -277,6 +395,29 @@ KB_MATRIX_LAYER(
     kprrel,     kprrel,
     kprrel,     NULL,       NULL,
     kprrel,     kprrel,     kprrel
+),
+// LAYER 1 - Fn keys overlay for LAYER 3
+    KB_MATRIX_LAYER(
+    // unused
+    NULL,
+    // left hand
+    kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     NULL,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                                                                ktrans,     ktrans,
+                                                    NULL,       NULL,       ktrans,
+                                                    ktrans,     ktrans,     ktrans,
+    // right hand
+    NULL,       kprrel,     kprrel,     kprrel,     kprrel,     kprrel,     kprrel,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+                            ktrans,     ktrans,     ktrans,     ktrans,     ktrans,
+    ktrans,     ktrans,
+    ktrans,     NULL,       NULL,
+    ktrans,     ktrans,     ktrans
 ),
 };
 // ----------------------------------------------------------------------------
