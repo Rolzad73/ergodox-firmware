@@ -25,40 +25,53 @@
 			} while(0)
 	#endif
 
-	// NOTE : does "on" slide animation
+	// NOTE : scan right animation
 	#ifndef kb_led_delay_usb_init
 	#define kb_led_delay_usb_init() do {				\
 			_kb_led_3_on();					\
-			_delay_ms(125);					\
+			_delay_ms(60);					\
 			_kb_led_2_on();					\
-			_delay_ms(125);					\
+			_delay_ms(60);					\
 			_kb_led_1_on();					\
-			_delay_ms(125);					\
+			_kb_led_3_off();				\
+			_delay_ms(60);					\
 			_kb_led_6_on();					\
-			_delay_ms(125);					\
+			_kb_led_2_off();				\
+			_delay_ms(60);					\
 			_kb_led_5_on();					\
-			_delay_ms(125);					\
+			_kb_led_1_off();				\
+			_delay_ms(60);					\
 			_kb_led_4_on();					\
-			_delay_ms(125);					\
+			_kb_led_6_off();				\
+			_delay_ms(60);					\
+			_kb_led_5_off();				\
+			_delay_ms(60);					\
+			_kb_led_4_off();				\
 			} while(0)
 	#endif
 
-	// NOTE : does "off" slide animation
+	// NOTE : scan left animation
 	#ifndef kb_led_state_ready
 	#define kb_led_state_ready() do {				\
-			_kb_led_3_off();				\
-			_delay_ms(125);					\
-			_kb_led_2_off();				\
-			_delay_ms(125);					\
-			_kb_led_1_off();				\
-			_delay_ms(125);					\
-			_kb_led_6_off();				\
-			_delay_ms(125);					\
-			_kb_led_5_off();				\
-			_delay_ms(125);					\
+			_kb_led_4_on();					\
+			_delay_ms(60);					\
+			_kb_led_5_on();					\
+			_delay_ms(60);					\
+			_kb_led_6_on();					\
 			_kb_led_4_off();				\
-			_delay_ms(125);					\
-			_kb_led_all_set_percent(MAKEFILE_LED_BRIGHTNESS); \
+			_delay_ms(60);					\
+			_kb_led_1_on();					\
+			_kb_led_5_off();				\
+			_delay_ms(60);					\
+			_kb_led_2_on();					\
+			_kb_led_6_off();				\
+			_delay_ms(60);					\
+			_kb_led_3_on();					\
+			_kb_led_1_off();				\
+			_delay_ms(60);					\
+			_kb_led_2_off();				\
+			_delay_ms(60);					\
+			_kb_led_3_off();				\
 			} while(0)
 	#endif
 
