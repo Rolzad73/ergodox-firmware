@@ -25,6 +25,7 @@
 			} while(0)
 	#endif
 
+// TODO: make this more of a KITT swipe (smaller area lit, maybe even "antialiased" using brightness)
 	// NOTE : does "on" slide animation
 	#ifndef kb_led_delay_usb_init
 	#define kb_led_delay_usb_init() do {				\

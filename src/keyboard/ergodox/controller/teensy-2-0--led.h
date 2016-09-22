@@ -31,11 +31,12 @@
 	#define _kb_led_3_set_percent(n) (OCR1C = (uint8_t)((n) * 0xFF))
 
 	// 3 more LEDs
-	// TODO : get the correct ports to use
 	// ports I think I can use as per circuit diagram (as well as use PB5, PB6, PB7 for existing LOCKS)
 	// PD4, PD5, PD7, PC7, PE6
 	// NOTE : do not use -> PB4 is +v and PD6 is ground
 	// NOTE : will want to figure out "set_percent(n)" for theses as well
+	// UPDATE : PWM capable ports required for led brightness, and there is 
+	// only 2 more PWM ports that are unused (PD7 and PC7)
 	 #define _kb_led_4_on()           (PORTD |=  (1<<4))
 	 #define _kb_led_4_off()          (PORTD &= ~(1<<4))
 	 #define _kb_led_5_on()           (PORTD |=  (1<<5))

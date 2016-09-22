@@ -100,9 +100,9 @@ int main(void) {
 	// NOTE : some ports are digital while others are analog.  In the circuit diagram SVG, the
 	//        LEDs have an indicator on the PWM (pulse width modultion) which is how the code gets
 	//        different brightnesses. see teensy-2-0.md for detailed info
-    //
-    // NOTE : Look into using SoftPWM library to get digital pins to be able to set brigtness
-    //        of LEDs that are not on OCR pins
+	//
+	// NOTE : Look into using SoftPWM library to get digital pins to be able to set brightness
+	//        of LEDs that are not on OCR pins
 
 	kb_led_state_power_on();
 
@@ -288,6 +288,7 @@ uint8_t main_layers_push(uint8_t layer, uint8_t sticky) {
 			layers[layers_head].layer = layer;
 			layers[layers_head].id = id;
 			layers[layers_head].sticky = sticky;
+// TODO: indicate_active_layer here?
 			return id;
 		}
 	}
@@ -303,7 +304,7 @@ uint8_t main_layers_push(uint8_t layer, uint8_t sticky) {
  */
 void main_layers_pop_id(uint8_t id) {
 	// look for the element with the id we want to pop
-	for (uint8_t element=1; element<=layers_head; element++)
+	for (uint8_t element=1; element<=layers_head; element++) {
 		// if we find it
 		if (layers[element].id == id) {
 			// move all layers above it down one
@@ -317,7 +318,10 @@ void main_layers_pop_id(uint8_t id) {
 			// record keeping
 			layers_ids_in_use[id] = false;
 			layers_head--;
+// TODO: indicate_active_layer here?
+			return;
 		}
+	}
 }
 
 /*
